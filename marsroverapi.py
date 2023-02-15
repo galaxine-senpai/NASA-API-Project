@@ -5,7 +5,7 @@ api = "https://api.nasa.gov/mars-photos/api/v1" # Nasa API
 if os.getenv["apikey"] == None or "": # Check if the API key is set in the .env file
     apikey = "DEMO_KEY" # If not use the demo key
 else:
-    apikey = os.getenv["apikey"] # else get the API key set by you in the .env file
+    apikey = os.getenv("apikey") # else get the API key set by you in the .env file
 rovers = ["curiosity", "opportunity", "spirit"] # Rovers available
 cameras = ["NAVCAM", "FHAZ", "RHAZ", "MAST", "CHEMCAM", "MAHLI", "MARDI", "NAVCAM", "PANCAM", "MINITES"] # Cameras available
 
