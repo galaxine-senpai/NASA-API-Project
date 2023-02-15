@@ -41,7 +41,7 @@ def get_photos(rover, sol, camera):
     photourl = response.json()["photos"][0]["img_src"]
     earthdate = response.json()["photos"][0]["earth_date"]
     id = response.json()["photos"][0]["id"]
-    return f"Photo URL: {photourl}\n Earth Date: {earthdate}\n Photo ID: {id}"
+    return f"Photo URL: {photourl}\nEarth Date: {earthdate}\nPhoto ID: {id}"
 
 def get_status(rover):
     """Get status of a specific rover"""
@@ -61,7 +61,7 @@ def get_status(rover):
     launchdate = response.json()["photo_manifest"]["launch_date"]
     landingdate = response.json()["photo_manifest"]["landing_date"]
     status = response.json()["photo_manifest"]["status"]
-    return f"Launched: {launchdate}\n Landed on Mars: {landingdate}, \n Is {rover} active?: {status}"
+    return f"Launched: {launchdate}\nLanded on Mars: {landingdate},\n Is {rover} active?: {status}"
 
 #print(get_photos("curiosity", "100", "NAVCAM")) # Get photos from curiosity on sol 100 (testing)
 #print(get_status("curiosity")) # Get status of curiosity (testing)
