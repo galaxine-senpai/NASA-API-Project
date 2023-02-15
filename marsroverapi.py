@@ -1,5 +1,6 @@
 import requests, os
 from dotenv import load_dotenv
+import argparse
 load_dotenv()
 api = "https://api.nasa.gov/mars-photos/api/v1" # Nasa API
 
@@ -7,7 +8,15 @@ if os.getenv("apikey") == None or "": # Check if the API key is set in the .env 
     apikey = "DEMO_KEY" # If not use the demo key
 else:
     apikey = os.getenv("apikey") # else get the API key set by you in the .env file
-
+"""
+parser = argparse.ArgumentParser(
+    prog="Martian Rover API",
+    description="Get stuff on rovers from the Nasa Mars Rover API",
+    epilog="Made by galaxine~senapi, API made by NASA",
+    add_help=True,
+    ) # Create a parser for the command line arguments
+"""
+# Arrays of rovers and cameras
 rovers = ["curiosity", "opportunity", "spirit"] # Rovers available
 cameras = ["NAVCAM", "FHAZ", "RHAZ", "MAST", "CHEMCAM", "MAHLI", "MARDI", "NAVCAM", "PANCAM", "MINITES"] # Cameras available
 def get_photos(rover, sol, camera):
