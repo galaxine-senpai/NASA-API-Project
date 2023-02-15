@@ -2,13 +2,14 @@ import requests, os
 from dotenv import load_dotenv
 load_dotenv()
 api = "https://api.nasa.gov/mars-photos/api/v1" # Nasa API
-if os.getenv["apikey"] == None or "": # Check if the API key is set in the .env file
+
+if os.getenv("apikey") == None or "": # Check if the API key is set in the .env file
     apikey = "DEMO_KEY" # If not use the demo key
 else:
     apikey = os.getenv("apikey") # else get the API key set by you in the .env file
+
 rovers = ["curiosity", "opportunity", "spirit"] # Rovers available
 cameras = ["NAVCAM", "FHAZ", "RHAZ", "MAST", "CHEMCAM", "MAHLI", "MARDI", "NAVCAM", "PANCAM", "MINITES"] # Cameras available
-
 def get_photos(rover, sol, camera):
     """Get photos from the Nasa Mars Rover API"""
     # A ton of innecessary pre checks to make sure the user has provided the correct information
@@ -54,10 +55,13 @@ def get_status(rover):
     if response.status_code != 200:
         print("Error getting rover status, exiting...")
         return
-    return response.json() # TODO: Get specific values from the response
+    launchdate = response.json()["photo_manifest"]["launch_date"]
+    landingdate = response.json()["photo_manifest"]["landing_date"]
+    status = response.json()["photo_manifest"]["status"]
+    return f"Launched: {launchdate}\n Landed on Mars: {landingdate}, \n Is {rover} active?: {status}" # TODO: Get specific values from the response
 
 #print(get_photos("curiosity", "100", "NAVCAM")) # Get photos from curiosity on sol 100 (testing)
-#print(get_status("curiosity")) # Get status of curiosity (testing)
+print(get_status("curiosity")) # Get status of curiosity (testing)
 
 """
 Made by galaxine~senapi
