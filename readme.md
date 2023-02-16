@@ -32,3 +32,5 @@ python3 marsroverapi.py
 ### Notes
 
 ~~As of current (2/15/23) the File outputs everything it gets from the API flooding the terminal, I will be fixing this ASAP~~ ***FIXED***
+
+I will be making a "packaged" version to use eventually
