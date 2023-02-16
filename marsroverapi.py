@@ -76,5 +76,10 @@ Made by galaxine~senapi
 
 GitHub: https://github.com/galaxine-senapi
 Discord: gawaxine.exe#1015
-InstagramL @aydeng854
+Instagram: @aydeng854
+
+API made by NASA
+
+Contributors:
+- yapudjus on GitHub
 """
