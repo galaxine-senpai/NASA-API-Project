@@ -19,7 +19,7 @@ parser = argparse.ArgumentParser(
 # Arrays of rovers and cameras
 rovers = ["curiosity", "opportunity", "spirit"] # Rovers available
 cameras = ["NAVCAM", "FHAZ", "RHAZ", "MAST", "CHEMCAM", "MAHLI", "MARDI", "NAVCAM", "PANCAM", "MINITES"] # Cameras available
-def get_photos(rover: str, sol: int, camera="NAVCAM"):
+def get_photos(rover: str, sol: int, camera: str):
     """Get photos from the Nasa Mars Rover API"""
     # A ton of innecessary pre checks to make sure the user has provided the correct information
     if rover == "":
@@ -35,8 +35,9 @@ def get_photos(rover: str, sol: int, camera="NAVCAM"):
         print("Sol is not a number, exiting... please provide a number")
         return
     elif camera.upper() not in cameras:
-        print("Camera not recognised, exiting... please provide a valid camera")
-        print(f"valid cameras are {', '.join(cameras)}")
+        print("Defaulting to NAVCAM")
+        camera = "NAVCAM"
+        print(f"valid cameras are {', '.join(cameras)}") #TODO: Make a seperate file so I can sort all the cameras each rover has
         return
 
     url = f"{api}/rovers/{rover}/photos?sol={sol}&camera={camera}&api_key={apikey}"
@@ -66,7 +67,7 @@ def get_status(rover: str):
     launchdate = response.json()["photo_manifest"]["launch_date"]
     landingdate = response.json()["photo_manifest"]["landing_date"]
     status = response.json()["photo_manifest"]["status"]
-    return f"Launched: {launchdate}\nLanded on Mars: {landingdate},\n Is {rover} active?: {status}" 
+    return f"Launched: {launchdate}\nLanded on Mars: {landingdate},\nIs {rover} active?: {status}" 
 
 #print(get_photos("curiosity", "100", "NAVCAM")) # Get photos from curiosity on sol 100 (testing)
 #print(get_status("curiosity")) # Get status of curiosity (testing)
