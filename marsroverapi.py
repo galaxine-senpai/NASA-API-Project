@@ -42,7 +42,7 @@ def get_photos(rover: str, sol: int, camera="NAVCAM"):
     url = f"{api}/rovers/{rover}/photos?sol={sol}&camera={camera}&api_key={apikey}"
     response = requests.get(url)
     if response.status_code != 200:
-        print("Error getting photos, exiting...") # TODO: Get the first photo for that sol (day) instead of every single photo
+        print("Error getting photos, exiting...")
         return
     photourl = response.json()["photos"][0]["img_src"]
     earthdate = response.json()["photos"][0]["earth_date"]
