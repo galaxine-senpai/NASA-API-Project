@@ -27,3 +27,5 @@ Instagram: @aydeng854
 
 API made by NASA
 """
+
+#Note: This is very useless due to the fact that you have to request a specific date and even then it might not work.... You are better off using the google maps API.
