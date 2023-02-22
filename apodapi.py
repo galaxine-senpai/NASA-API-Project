@@ -26,7 +26,7 @@ def get_todays_photo():
 def get_specific_apod(month: int, day: int, year: int): #Month can be two or one didget (eg: 1 or 01, YEAR HAS TO BE 4)
     """Get the APOD (date example: 4,26,2007"""
     r = requests.get(f"{api}?api_key={apikey}&date={year}-{month}-{day}")
-    if r.status_code != 200:
+    if r.status_code != 200 or year < 1995 and month < 6 and day < 16:
         print("Error getting photos, exiting...")
         return
     else:
@@ -34,10 +34,11 @@ def get_specific_apod(month: int, day: int, year: int): #Month can be two or one
         Title = r.json()["title"]
         Date = r.json()["date"]
         Photo = r.json()["hdurl"]
+        
     return f"Copyright/Author: N/A\nTitle: {Title}\nDate Taken:{Date}\nPhoto URL: {Photo}"
 
 #print(get_todays_photo()) # Tested: Good, no issues
-print(get_specific_apod(4, 26, 2007)) # Tested: Good, no issues
+#print(get_specific_apod(11, 7, 1987)) # Tested: Good, no issues
 
 """
 Made by galaxine~senapi
