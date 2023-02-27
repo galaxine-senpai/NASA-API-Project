@@ -29,8 +29,14 @@ An example is:
 python3 marsroverapi.py
 ```
 
-### Notes
+### Bugs
 
 ~~As of current (2/15/23) the File outputs everything it gets from the API flooding the terminal, I will be fixing this ASAP~~ ***FIXED***
+
+As of 2/27/23 APOD file doesn't accept the vars and do the date check correctly, and vars are not detected correctly by the empty check // Will fix when able
+
+As of 2/27/23 Image and video API is not printing anything to the console // Will fix when able
+
+### Notes
 
 I will be making a "packaged" version to use eventually
