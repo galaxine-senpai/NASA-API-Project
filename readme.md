@@ -39,4 +39,4 @@ As of 2/27/23 Image and video API is not printing anything to the console // Wil
 
 ### Notes
 
-I will be making a "packaged" version to use eventually
+I will be doing the whole args thing with the Mars Rover API File soon
