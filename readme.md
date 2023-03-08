@@ -37,6 +37,8 @@ As of 2/27/23 APOD file doesn't accept the vars and do the date check correctly,
 
 As of 2/27/23 Image and video API is not printing anything to the console // Will fix when able
 
+As of 3/8/23 Just doing "python3 main.py" will not work, unknown why (I am stupid) // Will fix when I figure it out
+
 ### Notes
 
 I will be doing the whole args thing with the Mars Rover API File soon

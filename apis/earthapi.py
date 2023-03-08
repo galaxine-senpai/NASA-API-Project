@@ -1,6 +1,5 @@
 import requests, os
 from dotenv import load_dotenv
-import argparse
 load_dotenv()
 
 if os.getenv("apikey") == None or "": # Check if the API key is set in the .env file
