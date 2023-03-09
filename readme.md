@@ -26,7 +26,7 @@ Now since that was all that needed to be done you can now just run the file of y
 
 An example is:
 ```bash
-python3 marsroverapi.py
+python3 main.py apod today
 ```
 
 ### Bugs
